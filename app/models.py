@@ -1,13 +1,11 @@
-from sqlalchemy import create_engine, Column, Integer, String, DateTime, ForeignKey
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, UniqueConstraint
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy.orm import relationship, backref
 from datetime import datetime
+from app.database import Base, engine
 
-engine = create_engine('sqlite:///budget-badger.db')
-Model = declarative_base(name='Model')
 
-class User(Model):
+class User(Base):
     __tablename__ = 'users'
 
     id          = Column(Integer, primary_key=True)
@@ -19,7 +17,7 @@ class User(Model):
                 f' last_name: "{self.last_name}")>')
 
 
-class Category(Model):
+class Category(Base):
     __tablename__ = 'categories'
 
     id      = Column(Integer, primary_key=True)
@@ -29,17 +27,23 @@ class Category(Model):
         return f'<Category(id: {self.id}, name: "{self.name}")>'
 
 
-class Card(Model):
+class Card(Base):
     __tablename__ = 'cards'
 
-    id      = Column(Integer, primary_key=True)
-    name    = Column(String, nullable=False, unique=True)
+    id              = Column(Integer, primary_key=True)
+    institution     = Column(String, nullable=False)
+    last_four       = Column(Integer, nullable=False)
+    user_id         = Column(Integer, ForeignKey(User.id), nullable=False)
+
+    user            = relationship(User, backref=backref('cards', lazy='joined'))
+    __table_args__  = (UniqueConstraint('institution', 'last_four', 'user_id'),)
 
     def __repr__(self):
-        return f'<Card(id: {self.id}, name: "{self.name}")>'
+        return (f'<Card(id: {self.id}, institution: "{self.institution}",'
+                f' last_four: {self.last_four}, user_id: {self.user_id})>')
 
 
-class Transaction(Model):
+class Transaction(Base):
     __tablename__ = 'transactions'
 
     id          = Column(Integer, primary_key=True)
@@ -75,4 +79,5 @@ class Transaction(Model):
                 f' user_id: {self.user_id}, card_id: {self.card_id})>')
 
 
-Model.metadata.create_all(bind=engine)
+# Generate database schema
+Base.metadata.create_all(bind=engine)
