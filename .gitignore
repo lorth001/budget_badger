@@ -1,2 +1,5 @@
 # Don't track these dirs
 __pycache__/
+
+# Don't track these files
+budget-badger.db
