@@ -1,0 +1,18 @@
+session:
+  url: "https://global.americanexpress.com/myca/logon/us/action/login"
+  payload: "Logon=Logon&UserID={USERNAME}&Password={PASSWORD}"
+  headers:
+    Accept-Language: "en-US,en;q=0.5"
+    Content-Type: "application/x-www-form-urlencoded; charset=utf-8"
+
+transactions:
+  url: "https://global.americanexpress.com/api/servicing/v1/financials/transactions"
+  querystring:
+    limit: "1000"
+    offset: "0"
+    extended_details: "merchant, category"
+    status: "posted"
+    start_date: 
+    end_date: 
+  headers:
+    account_token: "{TOKEN}"
