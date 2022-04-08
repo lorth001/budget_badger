@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, UniqueCons
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy.orm import relationship, backref
 from datetime import datetime
-from app.database import Base, engine
+from database import Base, engine
 
 
 class Institution(Base):
@@ -15,23 +15,6 @@ class Institution(Base):
         return (f'<Institution(id: {self.id}, name: "{self.name}")>')
 
 
-class Card(Base):
-    __tablename__ = 'cards'
-
-    id              = Column(Integer, primary_key=True)
-    institution     = Column(Integer, ForeignKey(Institution.id), nullable=False)
-    user            = Column(Integer, ForeignKey(User.id), nullable=False)
-    last_four       = Column(Integer, nullable=False)
-
-    institution     = relationship(Institution, backref=backref('cards', lazy='joined'))
-    user            = relationship(User, backref=backref('cards', lazy='joined'))
-    __table_args__  = (UniqueConstraint('institution', 'user', 'last_four'),)
-
-    def __repr__(self):
-        return (f'<Card(id: {self.id}, institution: "{self.institution}",'
-                f' user: {self.user}, last_four: {self.last_four})>')
-
-
 class User(Base):
     __tablename__ = 'users'
 
@@ -42,6 +25,23 @@ class User(Base):
     def __repr__(self):
         return (f'<User(id: {self.id}, first_name: "{self.first_name}",'
                 f' last_name: "{self.last_name}")>')
+
+
+class Card(Base):
+    __tablename__ = 'cards'
+
+    id              = Column(Integer, primary_key=True)
+    institution_id  = Column(Integer, ForeignKey(Institution.id), nullable=False)
+    user_id         = Column(Integer, ForeignKey(User.id), nullable=False)
+    last_four       = Column(Integer, nullable=False)
+
+    institution     = relationship(Institution, backref=backref('cards', lazy='joined'))
+    user            = relationship(User, backref=backref('cards', lazy='joined'))
+    __table_args__  = (UniqueConstraint('institution_id', 'user_id', 'last_four'),)
+
+    def __repr__(self):
+        return (f'<Card(id: {self.id}, institution_id: "{self.institution_id}",'
+                f' user_id: {self.user_id}, last_four: {self.last_four})>')
 
 
 class Category(Base):
@@ -68,9 +68,9 @@ class Transaction(Base):
     __tablename__ = 'transactions'
 
     id          = Column(Integer, primary_key=True)
-    category    = Column(Integer, ForeignKey(Category.id), nullable=False)
-    card        = Column(Integer, ForeignKey(Card.id), nullable=False)
-    merchant    = Column(Integer, ForeignKey(Merchant.id), nullable=False)
+    category_id = Column(Integer, ForeignKey(Category.id), nullable=False)
+    card_id     = Column(Integer, ForeignKey(Card.id), nullable=False)
+    merchant_id = Column(Integer, ForeignKey(Merchant.id), nullable=False)
     _date       = Column(DateTime, nullable=False)
     _amount     = Column(Integer, nullable=False)
 
@@ -95,8 +95,8 @@ class Transaction(Base):
         self._amount = amount * 100
 
     def __repr__(self):
-        return (f'<Transaction(id: {self.id}, category: {self.category},'
-                f' card: {self.card}, merchant: {self.merchant},'
+        return (f'<Transaction(id: {self.id}, category_id: {self.category_id},'
+                f' card_id: {self.card_id}, merchant_id: {self.merchant_id},'
                 f' date: {self.date}, amount: {self.amount})>')
 
 
@@ -104,20 +104,20 @@ class Mapper(Base):
     __tablename__ = 'mappers'
     
     id              = Column(Integer, primary_key=True)
-    institution     = Column(Integer, nullable=False)
-    category        = Column(Integer, nullable=False)
-    merchant        = Column(Integer, nullable=False)
+    institution_id  = Column(Integer, nullable=False)
+    category_id     = Column(Integer, nullable=False)
+    merchant_id     = Column(Integer, nullable=False)
     inst_merch_id   = Column(String, nullable=False)
     name            = Column(String, nullable=False)
 
     institution     = relationship(Institution, backref=backref('mappers', lazy='joined'))
     category        = relationship(Category, backref=backref('mappers', lazy='joined'))
     merchant        = relationship(Merchant, backref=backref('mappers', lazy='joined'))
-    __table_args__  = (UniqueConstraint('institution', 'name'),)
+    __table_args__  = (UniqueConstraint('institution_id', 'name'),)
 
     def __repr__(self):
-        return (f'<Mapper(id: {self.id}, institution: {self.institution},'
-                f' category: {self.category}, merchant: {self.merchant},'
+        return (f'<Mapper(id: {self.id}, institution_id: {self.institution_id},'
+                f' category_id: {self.category_id}, merchant_id: {self.merchant_id},'
                 f' inst_merch_id: "{self.inst_merch_id}", name: "{self.name}")>')
 
 

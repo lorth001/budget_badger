@@ -1,9 +1,11 @@
 from sqlalchemy import create_engine, event
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, scoped_session
+import os
 
+dir = os.path.dirname(__file__)
 
-engine = create_engine('sqlite:///budget-badger.db')
+engine = create_engine(f'sqlite:///{dir}/budget-badger.db')
 
 @event.listens_for(engine, 'connect')
 def set_sqlite_pragma(dbapi_connection, connection_record):
