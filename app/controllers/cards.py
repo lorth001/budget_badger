@@ -6,8 +6,8 @@ def get_card(id):
     card = Card.query.get(id)
     return card
 
-def add_card(inst, l_four, u_id):
-    card = Card(institution=inst, last_four=l_four, user_id=u_id)
+def add_card(inst, user_id, last_four):
+    card = Card(institution=inst, user=user_id, last_four=last_four)
     session.add(card)
     session.commit()
     return card.id

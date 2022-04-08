@@ -6,8 +6,8 @@ def get_transaction(id):
     transaction = Transaction.query.get(id)
     return transaction
 
-def add_transaction(date, amnt, cat_id, u_id, c_id):
-    transaction = Transaction(date=date, amount=amnt, category_id=c_id, user_id=u_id, card_id=c_id)
+def add_transaction(cat_id, card_id, merch_id, date, amnt):
+    transaction = Transaction(category=cat_id, card=card_id, merchant=merch_id, date=date, amount=amnt)
     session.add(transaction)
     session.commit()
     return transaction.id
