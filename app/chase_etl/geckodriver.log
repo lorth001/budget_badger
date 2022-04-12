@@ -1,0 +1,91 @@
+1649793971056	geckodriver	INFO	Listening on 127.0.0.1:49137
+1649793971561	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "57549" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileMbTcMG"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1649793972510	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileMbTcMG/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:57549/devtools/browser/82d06f30-5ae1-4f50-b128-387ce270e9ba
+1649793973689	Marionette	INFO	Listening on port 41867
+Read port: 41867
+1649793973781	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1649793977363	Marionette	INFO	Stopped listening on port 41867
+JavaScript error: resource://services-settings/RemoteSettingsWorker.jsm, line 143: Error: Shutdown, aborting read-only worker requests.
+1649794025230	geckodriver	INFO	Listening on 127.0.0.1:56841
+1649794025234	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "42293" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileypScqQ"
+*** You are running in headless mode.
+1649794025579	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileypScqQ/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:42293/devtools/browser/a4f3af2d-1680-4257-bcfc-eaef808b53e1
+1649794026665	Marionette	INFO	Listening on port 36941
+Read port: 36941
+1649794026749	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1649794028056	Marionette	INFO	Stopped listening on port 36941
+JavaScript error: resource://services-settings/RemoteSettingsWorker.jsm, line 143: Error: Shutdown, aborting read-only worker requests.
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1649795318894	geckodriver	INFO	Listening on 127.0.0.1:40157
+1649795319399	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "53373" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile7niFNr"
+*** You are running in headless mode.
+1649795319742	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile7niFNr/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:53373/devtools/browser/3370709b-bf76-40bb-98c1-ecd8b6ed26b7
+1649795320736	Marionette	INFO	Listening on port 45875
+Read port: 45875
+1649795320831	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://secure03a.chase.com/web/auth/dashboard line 26 > injectedScript, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://secure03a.chase.com/web/auth/dashboard, line 26: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://secure03a.chase.com/web/auth/?fromOrigin=https://secure03a.chase.com line 43 > injectedScript, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://secure03a.chase.com/web/auth/?fromOrigin=https://secure03a.chase.com, line 43: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1649795472979	geckodriver	INFO	Listening on 127.0.0.1:33201
+1649795473484	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "54249" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilea9TVhf"
+*** You are running in headless mode.
+1649795473834	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilea9TVhf/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:54249/devtools/browser/e96c54c0-2b0d-46a5-91a2-d7eafe25ac4b
+1649795474802	Marionette	INFO	Listening on port 46751
+Read port: 46751
+1649795474899	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://secure03a.chase.com/web/auth/dashboard line 26 > injectedScript, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://secure03a.chase.com/web/auth/dashboard, line 26: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://secure03a.chase.com/web/auth/?fromOrigin=https://secure03a.chase.com line 43 > injectedScript, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://secure03a.chase.com/web/auth/?fromOrigin=https://secure03a.chase.com, line 43: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1649795564477	geckodriver	INFO	Listening on 127.0.0.1:60107
+1649795564982	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "48633" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile4D7S2F"
+*** You are running in headless mode.
+1649795565317	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile4D7S2F/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:48633/devtools/browser/968c4e5a-fdc8-4b9f-84a6-e4400b141fc4
+1649795566469	Marionette	INFO	Listening on port 42383
+Read port: 42383
+1649795566499	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://secure03a.chase.com/web/auth/dashboard line 26 > injectedScript, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://secure03a.chase.com/web/auth/dashboard, line 26: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://secure03a.chase.com/web/auth/?fromOrigin=https://secure03a.chase.com line 43 > injectedScript, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://secure03a.chase.com/web/auth/?fromOrigin=https://secure03a.chase.com, line 43: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1649795613363	geckodriver	INFO	Listening on 127.0.0.1:43589
+1649795613366	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "55911" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile9JR4n0"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1649795614321	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile9JR4n0/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:55911/devtools/browser/46473193-f3ff-4b6e-ac39-66e8e021fc17
+1649795615575	Marionette	INFO	Listening on port 35469
+Read port: 35469
+1649795615687	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://secure03a.chase.com/web/auth/dashboard line 26 > injectedScript, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://secure03a.chase.com/web/auth/dashboard, line 26: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://secure03a.chase.com/web/auth/?fromOrigin=https://secure03a.chase.com line 43 > injectedScript, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://secure03a.chase.com/web/auth/?fromOrigin=https://secure03a.chase.com, line 43: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1649795649547	Marionette	INFO	Stopped listening on port 35469
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+

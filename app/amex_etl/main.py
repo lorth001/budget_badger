@@ -8,7 +8,7 @@ for transaction in transactions:
     amount = transaction['amount']
     date = transaction['charge_date']
 
-    # handles statement payments and fees, which don't contain merchant details
+    # If-condition handles statement payments and fees, which don't contain merchant details
     if transaction['sub_type'] != 'PURCHASE':
         merchant_name = 'AMEX'
         merchant_id = 'AMEX'

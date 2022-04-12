@@ -48,5 +48,5 @@ def get_transactions(start_date=week_ago, end_date=today):
             params=transactions['querystring']
         ).json()['transactions']
     
-    return response       
+    return response
 
