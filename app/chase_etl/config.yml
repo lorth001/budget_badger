@@ -1,0 +1,17 @@
+accounts:
+  url: "https://secure07b.chase.com/svc/rl/accounts/l4/v1/app/data/list"
+  headers:
+    x-jpmc-csrf-token: "NONE"
+    Content-Type: "application/x-www-form-urlencoded; charset=utf-8"
+    Cookie: "{SMSESSION}"
+
+transactions:
+  url: "https://secure07b.chase.com/svc/rr/accounts/secure/v1/spending/summary/list/ccb/customer/behavioral-insights/spending-summary-experience/v1/profiles/187701751/transactions"
+  querystring:
+    requested-time-frame-type-name: "{TIMEFRAME}"
+    accounts: "{ACCOUNTS}"
+    requested-record-count: "200"
+    transaction-category-name: "ALL_CATEGORIES"
+  headers:
+    x-jpmc-csrf-token: "NONE"
+    Cookie: "{SMSESSION}"
